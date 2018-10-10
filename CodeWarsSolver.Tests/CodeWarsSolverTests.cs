@@ -44,6 +44,121 @@ namespace CWSolver.Tests
             Assert.Equal(expected, actual);
         }
 
+        // Level 8 kata https://www.codewars.com/kata/remove-string-spaces/train/csharp
+        [Theory]
+        [InlineData("ksdngkaishdfkljashdfkaheefk", "ksdng  kais     hdfkljas hdf  kaheefk")]
+        [InlineData("893458498y39yhge4hehethye", "893  45  8498y 39yhg  e4hehethy                        e")]
+        [InlineData(null, null)]
+        public void NoSpace(string input, string expected)
+        {
+            // Arrange
+            CodeWarsSolver spaces = new CodeWarsSolver();
+
+            // Act
+            string actual = spaces.NoSpace(input);
+
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+
+        // Level 8 kata https://www.codewars.com/kata/523b66342d0c301ae400003b
+        [Theory]
+        [InlineData(5, 10, 50)]
+        [InlineData(2, 3, 6)]
+        [InlineData(93845983, 7465, 700560263095)]
+        [InlineData(2345792834659832465, 0, 0)]
+        [InlineData(0, 0, 0)]
+        public void Multiply(int a, int b, int expected)
+        {
+            // Arrange
+            CodeWarsSolver mult = new CodeWarsSolver();
+
+            // Act
+            int actual = mult.Multiply(a, b);
+
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+
+        // Level 8 kata https://www.codewars.com/kata/even-or-odd/train/csharp
+        [Theory]
+        [InlineData(6, "Even")]
+        [InlineData(707, "Odd")]
+        [InlineData(1234567890, "Even")]
+        [InlineData(0, null)]
+        public void EvenOrOdd(int number, string expected)
+        {
+            // Arrange
+            CodeWarsSolver evenOdd = new CodeWarsSolver();
+
+            // Act
+            string actual = evenOdd.EvenOrOdd(number);
+
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+
+        // Level 8 kata https://www.codewars.com/kata/grasshopper-terminal-game-combat-function-1/train/csharp
+        [Theory]
+        [InlineData(100, 60, 40)]
+        public void Combat(float health, float damage, float expected)
+        {
+            // Arrange
+            CodeWarsSolver combat = new CodeWarsSolver();
+
+            // Act
+            float actual = combat.Combat(health, damage);
+
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+
+        // Level 8 kata https://www.codewars.com/kata/calculate-average/train/csharp
+        [Theory]
+        [InlineData(new double[] { 1, 2, 3, 4, 5 }, 15)]
+        public void FindAverage(double[] array, double expected)
+        {
+            // Arrange
+            CodeWarsSolver avg = new CodeWarsSolver();
+
+            // Act
+            double actual = avg.FindAverage(array);
+
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+
+        // Level 8 kata https://www.codewars.com/kata/calculate-bmi/train/csharp
+        [Theory]
+        [InlineData(140, 72, "Underweight")]
+        public void Bmi(double weight, double height, string expected)
+        {
+            // Arrange
+            CodeWarsSolver bmi = new CodeWarsSolver();
+
+            // Act
+            string actual = bmi.Bmi(weight, height);
+
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+
+        // Level 6 kata https://www.codewars.com/kata/break-camelcase/train/csharp
+        [Theory]
+        [InlineData("rollTide", "roll Tide")]
+        [InlineData("thisIsCamelCase", "this Is Camel Case")]
+        public void BreakCamelCase(string str, string expected)
+        {
+            // Arrange
+            CodeWarsSolver camelCase = new CodeWarsSolver();
+
+            // Act
+            string actual = camelCase.BreakCamelCase(str);
+
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+
         // Level 6 kata https://www.codewars.com/kata/is-a-number-prime/train/csharp
         [Theory]
         [InlineData(7, true)]
@@ -63,7 +178,7 @@ namespace CWSolver.Tests
             Assert.Equal(expected, actual);
         }
 
-        // Level 6 kata https://www.codewars.com/kata/514b92a657cdc65150000006
+        // Level 6 kata https://www.codewars.com/kata/514b92a657cdc65150000006 multiples of 3 or 5
         [Theory]
         [InlineData(10, 23)]
         [InlineData(21, 113)]
