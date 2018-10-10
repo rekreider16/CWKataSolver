@@ -27,13 +27,18 @@ namespace CWKataSolver
             return (sentence.ToLower().Contains("tree fiddy")) || sentence.Contains("3.50");
         }
 
+        public int Solution(int value)
+        {
+            throw new NotImplementedException();
+        }
+
         // Level 6 kata
         public bool IsPrime(int n)
         {
             throw new NotImplementedException();
         }
 
-        public static int[] ArrayDiff(int[] a, int[] b)
+        public int[] ArrayDiff(int[] a, int[] b)
         {
             throw new NotImplementedException();
         }

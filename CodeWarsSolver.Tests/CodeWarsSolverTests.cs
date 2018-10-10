@@ -51,7 +51,6 @@ namespace CWSolver.Tests
         [InlineData(2, true)]
         [InlineData(197, true)]
         [InlineData(0, false)]
-        [InlineData(null, false)]
         public void IsPrime(int n, bool expected)
         {
             // Arrange
@@ -64,13 +63,41 @@ namespace CWSolver.Tests
             Assert.Equal(expected, actual);
         }
 
-        // Level 6 kata
+        // Level 6 kata https://www.codewars.com/kata/514b92a657cdc65150000006
+        [Theory]
+        [InlineData(10, 23)]
+        [InlineData(21, 113)]
+        [InlineData(0, 0)]
+        [InlineData(5, 8)]
+        public void Solution(int value, int expected)
+        {
+            // Arrange
+            CodeWarsSolver solution = new CodeWarsSolver();
+
+            // Act
+            int actual = solution.Solution(value);
+
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+
+        // Level 6 kata https://www.codewars.com/kata/array-dot-diff
 
         [Theory]
-        [InlineData]
-        public void ArrayDiff(int[] a, int[] b)
+        [InlineData(new int[] { 0, 1, 2 }, new int[] { 0, 1 }, new int[]{ 2 })]
+        [InlineData(new int[] { 9, 654, 21, 0, 5 }, new int[] { 9, 21, 0 }, new int[] { 654, 5 })]
+        [InlineData(new int[] { 9, 8, 7, 6 }, new int[] { 8, 7, 6 }, new int[] { 9 })]
+        [InlineData(null, null, null)]
+        public void ArrayDiff(int[] a, int[] b, int[] expected)
         {
+            // Arrange
+            CodeWarsSolver diff = new CodeWarsSolver();
 
+            // Act
+            int[] actual = diff.ArrayDiff(a, b);
+
+            // Assert
+            Assert.Equal(expected, actual);
         }
 
         // Level 5 kata https://www.codewars.com/kata/latest/my-languages
